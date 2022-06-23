@@ -7,6 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <script></script>
+    <script>
+        //Rock = 1, Paper = 2, Scissors = 3
+
+        //random number generation
+        CPU = function(){
+           return cpuNum= Math.floor(Math.random()*2)+1; 
+        }
+        let answer = parseInt(promt("Choose rock, paper or scissors"));
+
+       //conversion from string to number
+       stringToNum = function(number){
+           if (answer=="rock"){
+               num = 1
+           }
+           else if (answer == "paper"){
+               num = 2
+           }
+           else if (answer == "scissors"){
+               num=3
+
+            return num
+           }
+       }
+
+
+    </script>
 </body>
 </html>
