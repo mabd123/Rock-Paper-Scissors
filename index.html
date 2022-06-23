@@ -10,14 +10,15 @@
     <script>
         //Rock = 1, Paper = 2, Scissors = 3
 
-        //random number generation
-        CPU = function(){
-           return cpuNum= Math.floor(Math.random()*2)+1; 
-        }
-        let answer = parseInt(promt("Choose rock, paper or scissors"));
+        //random number generation        
+        let cpuNum = Math.floor(Math.random()*2)+1; 
+           
+        // user input
+        let answer = parseInt(prompt("Choose rock, paper or scissors"));
 
-       //conversion from string to number
-       stringToNum = function(number){
+       //conversion from user input string to number
+       stringToNum = function(answer){
+           let num="nothing num"
            if (answer=="rock"){
                num = 1
            }
@@ -25,11 +26,42 @@
                num = 2
            }
            else if (answer == "scissors"){
-               num=3
-
+               num = 3
+           }
             return num
            }
-       }
+
+        //game
+         game = function(stringToNum(answer), cpuNum){
+            let result="nothing";
+
+            if (answer == cpuNum){
+                result = "draw"
+             }
+             else if (answer == 1 && cpuNum == 2){
+                 result = "computer wins"
+             }
+             else if (answer == 1 && cpuNum ==3){
+                result= "user wins"
+             }
+             else if (answer == 2 && cpuNum==1){
+                 result="user wins"
+             }
+             else if (answer == 2 && cpuNum==3){
+                 result = "computer wins"
+             }
+             else if (answer == 3 && cpuNum==1){
+                 result = "computer wins"
+             }
+             else if (answer == 3 && cpuNum==2){
+                 result = "user wins"
+             }
+             return result
+         }
+       console.log(game(answer, cpuNum))
+       console.log(answer)
+       console.log(cpuNum)
+       console.log(num)
 
 
     </script>
