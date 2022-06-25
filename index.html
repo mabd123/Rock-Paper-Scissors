@@ -8,14 +8,14 @@
 </head>
 <body>
     <script>
-        //loop for best of 10
+        //loop for best of 9
         let userScore=0
         let cpuScore=0
-        while (userScore<6 && cpuScore<6){
+        while (userScore<5 && cpuScore<5){
             //Rock = 1, Paper = 2, Scissors = 3
 
             //random number generation        
-            let cpuNum = Math.floor(Math.random()*2)+2; 
+            let cpuNum = Math.floor(Math.random()*3)+1; 
                 
             // user input
             let answer = prompt("Choose rock, paper or scissors");
@@ -35,10 +35,9 @@
                     return num;
                 }
 
-            const num = stringToNum(answer)
-            console.log(num)
-
-            
+            let num = stringToNum(answer)
+            //console.log(num)
+         
             //game
             game = function(num, cpuNum){
                 let result;
@@ -48,19 +47,19 @@
                 else if (num == 1 && cpuNum == 2){
                     result = "computer wins"
                 }
-                else if (num == 1 && cpuNum ==3){
-                    result= "user wins"
+                else if (num == 1 && cpuNum == 3){
+                    result = "user wins"
                 }
-                else if (num == 2 && cpuNum==1){
-                    result="user wins"
+                else if (num == 2 && cpuNum == 1){
+                    result ="user wins"
                 }
-                else if (num == 2 && cpuNum==3){
+                else if (num == 2 && cpuNum == 3){
                     result = "computer wins"
                 }
-                else if (num == 3 && cpuNum==1){
+                else if (num == 3 && cpuNum == 1){
                     result = "computer wins"
                 }
-                else if (num == 3 && cpuNum==2){
+                else if (num == 3 && cpuNum == 2){
                     result = "user wins"
                 }
                 return result;
@@ -68,31 +67,47 @@
 
             let result= game(num, cpuNum)
 
-            if (result="user wins"){
+            if (result == "user wins"){
                 userScore++
             }
-            else if (result="computer wins"){
+            else if (result == "computer wins"){
                 cpuScore++
             }
-            else if (result="draw"){
+            else if (result == "draw"){
+                userScore+0
+                cpuScore+0
             }
 
+       let cpuChoie;
+       if (cpuNum==1){
+           cpuChoie="Rock"
+       }
+       else if (cpuNum==2){
+           cpuChoie="Paper"
+       }
+       else if (cpuNum==3){
+           cpuChoie="Scissors"
+       }
 
-
+       console.log(" ")
+       console.log("user choice = " + answer)
+       console.log("computer choice = " + cpuChoie)
+       //console.log("num value = " + num)
+       //console.log("cpuNum = "+cpuNum)
        console.log("result value = " + result)
-       console.log("answer value = " + answer)
-       console.log("cpu value = " + cpuNum)
-       console.log("num value = " + num)
        console.log("user score is " + userScore)
        console.log("conputer score is " + cpuScore)
-
-
-
             }
+        console.log(" ")
+        console.log(`FINAL SCORE: USER ${userScore}, COMPUTER ${cpuScore}`)
 
-
-
-
+        if(userScore == 5){
+            console.log("USER WINS BEST OF 9!!!")
+        }
+        else if(cpuScore == 5){
+            console.log("COMPUTER WINS BEST OF 9!!!")
+        }
+        
     </script>
 </body>
 </html>
